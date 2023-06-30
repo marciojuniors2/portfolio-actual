@@ -8,12 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'banner': "[url(../../public/banner.png)]",
         'gradient-to-b':
-        'linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%)',
-        // 'linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#11172B  68%,#11172B  100%)',
-
-    
+          'linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%)',
+        'gradient-custom': 'linear-gradient(225deg, #313860 0%, #11172B 100%)',
       },
     },
   },

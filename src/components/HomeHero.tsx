@@ -29,7 +29,7 @@ function HomeHero() {
   }, [])
 
   return (
-    <div className="flex flex-col w-screen h-screen">
+    <div className="flex flex-col w-screen h-screen bg-gradient-to-b">
       <div className="-z-10 float-right">
         <Image alt="" fill src={banner} objectFit="cover" quality={100} />
       </div>
