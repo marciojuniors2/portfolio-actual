@@ -1,38 +1,56 @@
-import React, { ReactNode } from 'react'
+import React, { useState, useEffect } from 'react'
+import { MdOutlineWorkOutline } from 'react-icons/md'
+import { FaReact } from 'react-icons/fa'
 
 interface LineEffectProps {
-  screen: number
   scrolly: number
-  icon?: ReactNode
 }
 
-const Linha: React.FC<LineEffectProps> = ({ scrolly, icon, screen }) => {
-  const transitionDuration = 5 // Duração da transição em segundos
-  const initialHeight = screen // Altura inicial em vh (viewport height)
+const Linha: React.FC<LineEffectProps> = ({ scrolly }) => {
+  const sectionHeight = 100 // Altura de cada seção em vh
+  const sectionCount = 3 // Número de seções
+  const totalHeight = sectionHeight * sectionCount // Altura total da página em vh
+
+  const [lineHeight, setLineHeight] = useState(sectionHeight) // Altura inicial da linha é a altura da primeira seção
+
+  useEffect(() => {
+    const newLineHeight = Math.min(sectionHeight + scrolly, totalHeight) // Calcular a nova altura da linha
+    setLineHeight(newLineHeight)
+  }, [scrolly])
 
   const lineStyle = {
-    height: `${scrolly ? initialHeight : 10}vh`,
-    transition: `height ${transitionDuration}s`,
+    height: `${lineHeight}vh`,
+    transition: '4s',
     background: `linear-gradient(to bottom, #00FFFF ${
-      (scrolly / (window.innerHeight - initialHeight)) * 100
-    }%, #FF1493 ${(scrolly / (window.innerHeight - initialHeight)) * 10}%)`, // Gradiente com cores variáveis (mais neon)
+      (lineHeight / totalHeight) * 100
+    }%, #FF1493 ${(lineHeight / totalHeight) * 10}%)`,
     width: '3px',
     position: 'absolute',
     top: '0',
     left: '80px',
-    boxShadow: '0px 0px 10px rgba(246, 240, 240, 0.5)', // Efeito de sombra
+    boxShadow: '0px 0px 10px rgba(246, 240, 240, 0.5)',
   }
 
-  const showIcon = scrolly >= initialHeight / 2
+  const icon1Opacity = Math.min(lineHeight / (sectionHeight * 1.5), 1)
+  const icon2Opacity = Math.min(
+    (lineHeight - sectionHeight * 1.6) / (sectionHeight * 0.4),
+    1,
+  )
 
   return (
     <>
       <div style={lineStyle}></div>
-      {showIcon && (
-        <>
-          <div className="icons">{icon}</div>
-        </>
-      )}
+      <div className="icon1" style={{ opacity: icon1Opacity }}>
+        <FaReact className="reactIcon" color="white" />
+      </div>
+      <div className="icon2" style={{ opacity: icon2Opacity }}>
+        <MdOutlineWorkOutline className="past" color="white" />
+      </div>
+      <p
+        style={{ position: 'fixed', top: '10px', left: '10px', color: 'white' }}
+      >
+        Altura da linha: {lineHeight}vh
+      </p>
     </>
   )
 }

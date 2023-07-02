@@ -4,8 +4,8 @@ import Earth from './Earth'
 import { motion } from 'framer-motion'
 import astro from '../../public/astro1.png'
 import banner from '../../public/banner.png'
-import Linha from './Linha'
-import { FaReact } from 'react-icons/fa'
+// import Linha from './Linha'
+// import { FaReact } from 'react-icons/fa'
 
 interface props {
   scroll: number
@@ -37,8 +37,7 @@ function HomeHero({ scroll }: props) {
 
   return (
     <div className={`flex flex-col w-screen h-[${screen}vh] bg-gradient-to-b`}>
-      <Linha
-        screen={screen}
+      {/* <Linha
         scrolly={scroll}
         icon={
           <FaReact
@@ -47,7 +46,7 @@ function HomeHero({ scroll }: props) {
             color="white"
           />
         }
-      />
+      /> */}
 
       <div className="-z-10 float-right">
         <Image alt="" fill src={banner} objectFit="cover" quality={100} />

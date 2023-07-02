@@ -1,9 +1,25 @@
 import React from 'react'
 import XpItem from './XpItem'
+// import Linha from './Linha'
+// import { MdOutlineWorkOutline } from 'react-icons/md'
 
-function Xp() {
+interface props {
+  scroll: number
+}
+
+function Xp({ scroll }: props) {
   return (
     <div className="flex flex-col h-screen lg:mx-32 lg:pb-28 border-b-[3px] border-solid border-[#0EE7B7]">
+      {/* <Linha
+        scrolly={scroll}
+        icon={
+          <MdOutlineWorkOutline
+            className="reactIcon animate-bounce"
+            size={40}
+            color="white"
+          />
+        }
+      /> */}
       <div
         data-aos="fade-right"
         className="w-screen flex flex-col items-start gap-2"

@@ -3,9 +3,8 @@ import React, { useEffect, useState } from 'react'
 import HomeHero from '@/components/HomeHero'
 import Xp from '@/components/Xp'
 import Aos from 'aos'
-// import LineEffect from '@/components/LineEffect'
 import SectionProjects from '@/components/SectionProjects'
-// import Linha from '@/components/Linha'
+import Linha from '@/components/Linha'
 
 export default function Page() {
   const [scroll, setScroll] = useState(0)
@@ -29,13 +28,14 @@ export default function Page() {
 
   return (
     <div className="overflow-x-hidden">
+      <Linha scrolly={scroll} />
+
       <main>
         <section id="HomeHero">
-          {/* <Linha scrollY={scrollY} /> */}
           <HomeHero scroll={scroll} />
         </section>
         <section id="Xp">
-          <Xp />
+          <Xp scroll={scroll} />
         </section>
         <section id="Projects">
           <SectionProjects projetos={p} />
