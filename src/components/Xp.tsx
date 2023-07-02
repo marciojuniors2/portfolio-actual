@@ -3,7 +3,7 @@ import XpItem from './XpItem'
 
 function Xp() {
   return (
-    <div className="flex flex-col h-screen lg:px-14">
+    <div className="flex flex-col h-screen lg:mx-32 lg:pb-28 border-b-[3px] border-solid border-[#0EE7B7]">
       <div
         data-aos="fade-right"
         className="w-screen flex flex-col items-start gap-2"
@@ -16,7 +16,7 @@ function Xp() {
         </h2>
       </div>
 
-      <section className="w-screen flex mt-20 gap-8 md:gap-4 lg:mt-28 lg:flex-row lg:gap-6 lg:pb-28 border-b-[3px] border-solid border-[#0EE7B7]">
+      <section className="w-screen flex flex-col mt-20 gap-8 md:gap-4 lg:mt-28 lg:flex-row lg:gap-6 ">
         <XpItem
           year="May 2022 - Agust 22"
           empresa="Koode Ltda"

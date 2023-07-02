@@ -6,6 +6,7 @@
 
 /* Estilização personalizada */
 :root {
+  border: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,3 +28,32 @@
 ::-webkit-scrollbar-track {
   background: #d2d8f7;
 }
+
+
+.icons {
+  background: #141414;
+  box-shadow: 0px 0px 50% #141414;
+  padding: 10px;
+  position: absolute;
+  border-radius: 100%;
+  top: calc(50vh - 16px);
+  left: 80px;
+  transform: translateX(-50%);
+  transition: opacity 5s;
+  
+}
+
+
+.reactIcon {
+  border-radius: 100%;
+  box-shadow: 0px 0px 50px red;
+  transition: opacity 5s;
+  
+}
+
+
+
+
+
+
+

@@ -2,11 +2,16 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Earth from './Earth'
 import { motion } from 'framer-motion'
-
 import astro from '../../public/astro1.png'
 import banner from '../../public/banner.png'
+import Linha from './Linha'
+import { FaReact } from 'react-icons/fa'
 
-function HomeHero() {
+interface props {
+  scroll: number
+}
+
+function HomeHero({ scroll }: props) {
   const [text, setText] = useState('')
 
   useEffect(() => {
@@ -28,8 +33,22 @@ function HomeHero() {
     }
   }, [])
 
+  const screen = 100
+
   return (
-    <div className="flex flex-col w-screen h-screen bg-gradient-to-b">
+    <div className={`flex flex-col w-screen h-[${screen}vh] bg-gradient-to-b`}>
+      <Linha
+        screen={screen}
+        scrolly={scroll}
+        icon={
+          <FaReact
+            className="reactIcon animate-bounce"
+            size={40}
+            color="white"
+          />
+        }
+      />
+
       <div className="-z-10 float-right">
         <Image alt="" fill src={banner} objectFit="cover" quality={100} />
       </div>
