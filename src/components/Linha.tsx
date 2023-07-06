@@ -41,10 +41,10 @@ const Linha: React.FC<LineEffectProps> = ({ scrolly }) => {
     <>
       <div style={lineStyle}></div>
       <div className="icon1" style={{ opacity: icon1Opacity }}>
-        <FaReact className="reactIcon" color="white" />
+        <FaReact className="reactIcon" color="white" size={40} />
       </div>
       <div className="icon2" style={{ opacity: icon2Opacity }}>
-        <MdOutlineWorkOutline className="past" color="white" />
+        <MdOutlineWorkOutline className="past" color="white" size={40} />
       </div>
       <p
         style={{ position: 'fixed', top: '10px', left: '10px', color: 'white' }}

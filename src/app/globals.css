@@ -6,12 +6,15 @@
 
 /* Estilização personalizada */
 :root {
-  border: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
   background: #141414;
+}
+
+body {
+  font: 400 1rem 'Montserrat', sans-serif;
 }
 
 /* Barras de rolagem personalizadas */
@@ -29,6 +32,11 @@
   background: #d2d8f7;
 }
 
+img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
 .icon1 {
   background: #141414;
   box-shadow: 0px 0px 50% #141414;
@@ -43,6 +51,7 @@
 }
 
 .reactIcon {
+  background: red;
   border-radius: 100%;
   box-shadow: 0px 0px 50px red;
 }
@@ -53,7 +62,7 @@
   padding: 10px;
   position: absolute;
   border-radius: 100%;
-  top: calc(160vh - 16px);
+  top: calc(240vh - 16px);
   left: 80px;
   transform: translateX(-50%);
   opacity: 0;
@@ -64,3 +73,4 @@
   border-radius: 100%;
   box-shadow: 0px 0px 50px blue;
 }
+

@@ -2,14 +2,38 @@
 import React, { useEffect, useState } from 'react'
 import HomeHero from '@/components/HomeHero'
 import Xp from '@/components/Xp'
-import Aos from 'aos'
 import SectionProjects from '@/components/SectionProjects'
 import Linha from '@/components/Linha'
 
+import { getPrismicClient } from '@/services/prismic'
+import Prismic from 'prismic-javascript'
+
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 export default function Page() {
   const [scroll, setScroll] = useState(0)
+  const [projetos, setProjetos] = useState<any[]>([])
 
-  const p: any = []
+  const fecthData = async () => {
+    const prismic = getPrismicClient()
+
+    const projectResponse = await prismic.query(
+      [Prismic.Predicates.at('document.type', 'portfolio')],
+      { orderings: '[document.first_publication_date desc]' },
+    )
+
+    const projects = projectResponse.results.map((projeto) => ({
+      slug: projeto.uid,
+      title: projeto.data.title,
+      type: projeto.data.type,
+      description: projeto.data.description,
+      link: projeto.data.link.url,
+      thumbnail: projeto.data.thumbnail.url,
+    }))
+
+    setProjetos(projects)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +47,9 @@ export default function Page() {
   }, [])
 
   useEffect(() => {
+    fecthData()
     Aos.init({ duration: 1500 })
+    console.log('projects:', projetos)
   }, [])
 
   return (
@@ -32,13 +58,16 @@ export default function Page() {
 
       <main>
         <section id="HomeHero">
-          <HomeHero scroll={scroll} />
+          <HomeHero />
         </section>
         <section id="Xp">
-          <Xp scroll={scroll} />
+          <Xp />
         </section>
         <section id="Projects">
-          <SectionProjects projetos={p} />
+          <SectionProjects projetos={projetos} />
+        </section>
+        <section id="Projects">
+          {/* <SectionProjects projetos={projetos} /> */}
         </section>
       </main>
     </div>
