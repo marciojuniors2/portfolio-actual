@@ -6,6 +6,17 @@ interface LineEffectProps {
   scrolly: number
 }
 
+interface LineStyle {
+  height: string
+  transition: string
+  background: string
+  width: string
+  position: 'absolute'
+  top: string
+  left: string
+  boxShadow: string
+}
+
 const Linha: React.FC<LineEffectProps> = ({ scrolly }) => {
   const sectionHeight = 100 // Altura de cada seção em vh
   const sectionCount = 3 // Número de seções
@@ -18,7 +29,7 @@ const Linha: React.FC<LineEffectProps> = ({ scrolly }) => {
     setLineHeight(newLineHeight)
   }, [scrolly])
 
-  const lineStyle = {
+  const lineStyle: LineStyle = {
     height: `${lineHeight}vh`,
     transition: '4s',
     background: `linear-gradient(to bottom, #00FFFF ${
