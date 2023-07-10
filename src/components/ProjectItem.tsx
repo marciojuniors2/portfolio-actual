@@ -15,10 +15,10 @@ function ProjectItem({ title, type, slug, img }: ProjetoProps) {
   return (
     <div
       data-aos="fade-up"
-      className="flex h-[17rem] w-screen even:flex-row lg:w-[70vw] lg:h-[25rem] items-end lg:even:flex-row-reverse relative"
+      className="relative flex h-[17rem] w-screen even:flex-row lg:max-w-[70vw] lg:h-[25rem] items-end lg:even:flex-row-reverse  bg-red-500"
     >
       <section
-        className="w-screen lg:w-[40rem] xl:w-[50rem] lg:h-full relative"
+        className="relative h-full w-screen lg:w-[40rem] xl:w-[50rem]"
         style={{
           backgroundImage: bgImageUrl,
           backgroundRepeat: 'no-repeat',

@@ -18,10 +18,12 @@ export interface ProjetosProps {
 
 function SectionProjects({ projetos }: ProjetosProps) {
   return (
-    <div className="w-screen flex min-h-[200rem] flex-col items-center gap-20 pt-24">
-      <SectionTitle title="Ultimos Projetos" />
+    <div className="w-screen flex flex-col items-center gap-20 pt-24">
+      <div className="ml-52">
+        <SectionTitle title="Ultimos Projetos" />
+      </div>
 
-      <section className="gap-8 w-[70vw] flex flex-col lg:gap-16">
+      <section className="gap-8 flex flex-col lg:gap-16 bg-blue-600 overflow-y-hidden overflow-x-hidden ">
         {projetos.slice(0, 3).map((projeto) => (
           <ProjectItem
             key={projeto.slug}

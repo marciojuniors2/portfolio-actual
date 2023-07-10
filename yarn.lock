@@ -537,6 +537,11 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
+aurora-ui@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/aurora-ui/-/aurora-ui-1.3.0.tgz#eb0ad4cd4efe1ae0f34a908a313e76f1237dac08"
+  integrity sha512-Br1CPyfupXaaHgW/LRRolmhioyjVfSpeSF6juVvIyi+isQovn+zOz5Y3dJyDpoI07WRu8iOYuhDAadob7spnoQ==
+
 autoprefixer@10.4.14:
   version "10.4.14"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.14.tgz#e28d49902f8e759dd25b153264e862df2705f79d"
